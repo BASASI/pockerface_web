@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  resources :users
+  put 'users' => 'users#update'
+
   resources :cards
 
   # The priority is based upon order of creation: first created -> highest priority.
