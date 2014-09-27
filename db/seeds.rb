@@ -5,3 +5,14 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+User.create!([
+  {
+    device_id: "12345678901",
+    nickname: "ちゃんと目あけてるよ！",
+    # image_url: "http://xn--u9j5h1btf1e330rp0n10z0h8f.jp/wp1/wp-content/uploads/20110929_research_09.jpg"
+  },
+  { device_id: "12345678902",
+    nickname: "ドヤシェフ",
+    # image_url: "http://motosumi01.up.seesaa.net/image/E5B79DE8B68AE382B7E382A7E38395.jpg"
+  }
+])
