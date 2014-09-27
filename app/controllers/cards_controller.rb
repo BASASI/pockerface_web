@@ -11,7 +11,7 @@ class CardsController < ApplicationController
   # GET /cards/1.json
   def show
     respond_to do |format|
-      format.xml {render xml: @card.detectFace}
+      format.xml {render xml: @card.xml_doc}
       format.html{render :show}
     end
   end
@@ -73,6 +73,6 @@ class CardsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def card_params
-      params.require(:card).permit(:image_url, :offense, :stamina)
+      params.require(:card).permit(:image_url)
     end
 end

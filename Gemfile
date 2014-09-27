@@ -19,6 +19,8 @@ end
 
 group :default do
   gem 'nokogiri'
+  gem 'haml'
+  gem 'haml-rails'
 end
 
 # Use SCSS for stylesheets

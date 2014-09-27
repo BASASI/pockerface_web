@@ -3,7 +3,7 @@ class CreateCards < ActiveRecord::Migration
     create_table :cards do |t|
       t.string :image_url
       t.integer :offense
-      t.integer :stamina
+      t.integer :defense
 
       t.timestamps
     end

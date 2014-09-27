@@ -11,14 +11,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140927085206) do
+ActiveRecord::Schema.define(version: 20140927202340) do
 
   create_table "cards", force: true do |t|
     t.string   "image_url"
     t.integer  "offense"
-    t.integer  "stamina"
+    t.integer  "defense"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.text     "xml_doc"
   end
 
 end

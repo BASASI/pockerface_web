@@ -1,0 +1,18 @@
+%p#notice= notice
+
+%p
+  %strong image_url:
+  = @card.image_url
+
+%p
+  %strong Offense
+  = @card.offense
+
+%p
+  %strong Stamina
+  = @card.defense
+
+%p= @card.xml_doc
+
+= link_to 'Edit', edit_card_path(@card)
+= link_to 'Back', cards_path
