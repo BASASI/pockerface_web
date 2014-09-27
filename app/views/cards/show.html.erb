@@ -1,0 +1,23 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Image url:</strong>
+  <%= @card.image_url %>
+</p>
+
+<p>
+  <strong>Offense:</strong>
+  <%= @card.offense %>
+</p>
+
+<p>
+  <strong>Stamina:</strong>
+  <%= @card.stamina %>
+</p>
+<p>
+  <%= @card.detectFace %>
+</p>
+<%# <%= @cart.faewfa %>
+
+<%= link_to 'Edit', edit_card_path(@card) %> |
+<%= link_to 'Back', cards_path %>
