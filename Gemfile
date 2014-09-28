@@ -7,6 +7,7 @@ gem 'rails', '4.1.2'
 # Use sqlite3 as the database for Active Record
 group :development, :test do
   gem 'sqlite3'
+  gem 'dotenv-rails'
 end
 group :production do
   gem 'pg'
@@ -21,6 +22,8 @@ group :default do
   gem 'nokogiri'
   gem 'haml'
   gem 'haml-rails'
+  gem 'fog'
+  gem 'carrierwave'
 end
 
 # Use SCSS for stylesheets

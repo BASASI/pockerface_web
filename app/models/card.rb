@@ -2,6 +2,8 @@ class Card < ActiveRecord::Base
   belongs_to :user
   before_create :set_xml_doc
 
+  mount_uploader :image_url, FaceUploader
+
   def set_xml_doc
     require 'rexml/document'
     response = detectFace

@@ -81,6 +81,11 @@ class CardsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def card_params
-      params.require(:card).permit(:image_url, :user_id)
+      card_params = params.require(:card).permit(:image_url, :user_id)
+      if params[:device_id]
+        user = User.where(device_id: params[:device_id]).first
+        card_params.merge({user_id: user.id})
+      end
+      card_params
     end
 end
