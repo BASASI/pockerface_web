@@ -4,7 +4,15 @@ class CardsController < ApplicationController
   # GET /cards
   # GET /cards.json
   def index
-    @cards = Card.all
+    respond_to do |format|
+      format.html do
+        @cards = Card.all
+      end
+      format.json do
+        user = User.where(device_id: params[:device_id]).first
+        @cards = user.cards
+      end
+    end
   end
 
   # GET /cards/1
@@ -73,6 +81,6 @@ class CardsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def card_params
-      params.require(:card).permit(:image_url)
+      params.require(:card).permit(:image_url, :user_id)
     end
 end

@@ -40,6 +40,11 @@ class UsersController < ApplicationController
   # PATCH/PUT /users/1
   # PATCH/PUT /users/1.json
   def update
+    user = User.where(device_id: user_params[:device_id]).first
+    if user.present?
+      @user = user
+    end
+
     respond_to do |format|
       if @user.update(user_params)
         format.html { redirect_to @user, notice: 'User was successfully updated.' }
@@ -64,11 +69,7 @@ class UsersController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_user
-      if params[:device_id]
-        @user = User.find(device_id: params[:device_id])
-      else
-        @user = User.find(params[:id])
-      end
+      @user = User.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

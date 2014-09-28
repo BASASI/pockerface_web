@@ -1,4 +1,5 @@
 class Card < ActiveRecord::Base
+  belongs_to :user
   before_create :set_xml_doc
 
   def set_xml_doc
@@ -34,4 +35,6 @@ class Card < ActiveRecord::Base
     response
   end
 
+  def battle
+  end
 end

@@ -16,3 +16,13 @@ User.create!([
     # image_url: "http://motosumi01.up.seesaa.net/image/E5B79DE8B68AE382B7E382A7E38395.jpg"
   }
 ])
+
+User.all.each do |user|
+  Card.create!([
+    {
+      user_id: user.id,
+      image_url: 'http://garu-sol32.sakura.ne.jp/sblo_files/sara-shibanakata/image/sara-shibanakata-2014-03-31T19:39:03-1.jpeg'
+    }
+  ])
+end
+
